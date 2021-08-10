@@ -12,34 +12,22 @@ function preload() {
 
 function setup() {
   createCanvas(1000, 500);
-
+  background("blue")
   sea = createSprite(500,200,1000,250);
-  sea.scale = 0.25
-  
+  sea.scale = 0.25;
   sea.addImage(seaImg);
-  sea.x = sea.width/2;
-  
-
-
-  ship = createSprite(50,160,20,50);
-  ship.addAnimation("sailing", shipImg1);
-  ship.scale = 0.5;
-  ship.x = 10
-  ship.y = 20
-  ship.velocityX = 
-
- drawSprites();
-
-
+  sea.velocityX = -5
+  ship = createSprite(120,160,20,50);
+  ship.addAnimation("sailing",shipImg1);
+  ship.scale = 0.25;
 }
 
 function draw() {
  //making the sea velocity move
-  sea.velocityX = -2
-  ship.collide(sea);
-
+ background(0);
+  sea.velocityX = -3
   if(sea.x < 0) {
-    sea.x = sea.width/2;
+    sea.x = sea.width/8;
   }
   
   drawSprites();
